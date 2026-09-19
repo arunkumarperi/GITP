@@ -28,7 +28,7 @@ jobs:
       run: npm run build
 
     - name: Build Docker image
-      run: docker build -t ${{ secrets.USERNAME }}/my-app .
+      run: docker build -t arunkumar9000/arun_github_docker:latest .
 
     - name: Log in to Docker Hub
       uses: docker/login-action@v1
