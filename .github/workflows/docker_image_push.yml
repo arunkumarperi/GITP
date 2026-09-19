@@ -31,10 +31,9 @@ jobs:
       run: docker build -t arunkumar9000/arun_github_docker .
 
     - name: Log in to Docker Hub
-      uses: docker/login-action@v1
-      with:
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
+      run: echo "${{ secrets.PASSWORD }}" | docker login -u "${{ secrets.USERNAME }}" --password-stdin
+
+    
 
     - name: Push Docker image
       run: docker push arunkumar9000/arun_github_docker
